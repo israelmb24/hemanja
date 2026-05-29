@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hemanja Express — Premium Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--gold:#d4a017;
+--black:#090909;
+--red:#c0392b;
+--white:#ffffff;
+--gray:#b8b8b8;
+--card:#131313;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:var(--black);
+color:var(--white);
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(to bottom,rgba(0,0,0,.7),rgba(0,0,0,.9)),
+url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.logo{
+font-size:5rem;
+font-family:'Playfair Display',serif;
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.subtitle{
+letter-spacing:4px;
+text-transform:uppercase;
+font-size:.8rem;
+color:#ddd;
+margin-bottom:30px;
+}
+
+.promo{
+background:linear-gradient(135deg,#c0392b,#8e1f13);
+padding:20px 30px;
+border-radius:20px;
+max-width:350px;
+box-shadow:0 20px 60px rgba(192,57,43,.4);
+}
+
+.promo h1{
+font-size:2.3rem;
+line-height:1;
+margin-bottom:10px;
+}
+
+.promo p{
+font-size:.9rem;
+color:#eee;
+}
+
+.hero-btn{
+margin-top:25px;
+background:var(--gold);
+color:#000;
+padding:15px 30px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.hero-btn:hover{
+transform:scale(1.05);
+}
+
+.section{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+font-family:'Playfair Display',serif;
+margin-bottom:50px;
+color:var(--gold);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+overflow:hidden;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.badge{
+display:inline-block;
+background:rgba(212,160,23,.15);
+color:var(--gold);
+padding:6px 12px;
+border-radius:999px;
+font-size:.7rem;
+margin-bottom:15px;
+font-weight:600;
+}
+
+.card h3{
+font-size:1.5rem;
+margin-bottom:10px;
+}
+
+.card p{
+color:var(--gray);
+font-size:.9rem;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+.price{
+font-size:2rem;
+font-weight:800;
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.order-btn{
+display:block;
+width:100%;
+background:#25d366;
+color:#000;
+text-align:center;
+padding:14px;
+border-radius:14px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.order-btn:hover{
+transform:scale(1.03);
+}
+
+.info{
+background:#101010;
+border-top:1px solid rgba(255,255,255,.08);
+text-align:center;
+padding:80px 20px;
+}
+
+.info h2{
+font-size:2.5rem;
+margin-bottom:20px;
+color:var(--gold);
+}
+
+.info p{
+color:#ccc;
+line-height:2;
+}
+
+.floating-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25d366;
+color:#000;
+width:70px;
+height:70px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+text-decoration:none;
+box-shadow:0 20px 40px rgba(37,211,102,.4);
+z-index:999;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
+
+footer{
+padding:30px;
+text-align:center;
+font-size:.8rem;
+color:#666;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+@media(max-width:768px){
+.logo{
+font-size:3.5rem;
+}
+
+.section-title{
+font-size:2.2rem;
+}
+
+.promo h1{
+font-size:1.8rem;
+}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="logo">Hemanja</div>
+<div class="subtitle">Classic & Special Pizza</div>
+
+<div class="promo">
+<h1>🍕 PAGUE 1<br>LEVE 2</h1>
+<p>
+Promoção válida todos os dias.<br>
+Escolha sabores diferentes.
+</p>
+</div>
+
+<a class="hero-btn" href="https://wa.me/258860111163?text=Olá! Quero fazer um pedido 🍕">
+ENCOMENDAR AGORA
+</a>
+</section>
+
+<section class="section">
+<h2 class="section-title">Classic Pizza</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">🌱 CLÁSSICA</div>
+<h3>Margherita</h3>
+<p>Tomate sauce, mozzarella e orégãos.</p>
+<div class="price">650 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Margherita 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">🐟 ESPECIAL</div>
+<h3>Atum</h3>
+<p>Tomate, mozzarella, atum, ovo, azeitonas e orégão.</p>
+<div class="price">690 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Atum 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">🔥 MAIS PEDIDA</div>
+<h3>Frango</h3>
+<p>Tomate, mozzarella, frango, cebola, pimento e orégão.</p>
+<div class="price">690 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Frango 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">🥩 CLÁSSICA</div>
+<h3>Regina</h3>
+<p>Tomate, mozzarella, fiambre de carne e orégão.</p>
+<div class="price">690 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Regina 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">🌱 VEG</div>
+<h3>Vegetariana</h3>
+<p>Cogumelos, mozzarella, cebola, pimento e azeitonas.</p>
+<div class="price">690 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Vegetariana 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Special Pizza</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">⭐ PREMIUM</div>
+<h3>Mexicana</h3>
+<p>Carne moída, mozzarella, cebola, pimento, azeitonas e orégão.</p>
+<div class="price">690 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Mexicana 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593504049359-74330189a345?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">🇲🇿 FAVORITA</div>
+<h3>Moçambicana</h3>
+<p>Frango, carne moída, cogumelos, mozzarella e orégão.</p>
+<div class="price">750 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Moçambicana 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">🍗 CREMOSA</div>
+<h3>Frango Mayonise</h3>
+<p>Frango, mozzarella, cebola, pimento, maionese e orégão.</p>
+<div class="price">690 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza Frango Mayonise 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<div class="badge">👑 PREMIUM</div>
+<h3>4 Estações</h3>
+<p>Fiambre, cogumelos, mozzarella, azeitonas, pimento e orégão.</p>
+<div class="price">690 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero pedir Pizza 4 Estações 🍕">
+Pedir no WhatsApp
+</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">🔥 Promoção Especial</h2>
+
+<div class="card" style="max-width:700px;margin:auto;">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1400&auto=format&fit=crop">
+<div class="card-content" style="text-align:center;">
+<div class="badge">🔥 TODOS OS DIAS</div>
+<h3 style="font-size:2.5rem;">Pague 1 Leve 2</h3>
+<p>
+Escolha sabores diferentes.<br>
+Promoção válida todos os dias da semana.<br>
+Delivery disponível.
+</p>
+<div class="price">Média 690 MT · Grande 790 MT</div>
+<a class="order-btn" href="https://wa.me/258860111163?text=Olá! Quero aproveitar a promoção Pague 1 Leve 2 🍕🍕">
+Aproveitar Promoção
+</a>
+</div>
+</div>
+</section>
+
+<section class="info">
+<h2>📍 Informações</h2>
+<p>
+🕒 Aberto todos os dias · 6h30 às 22h00<br>
+📍 Av. Eduardo Mondlane · Em frente ao Hospital Central<br>
+📲 WhatsApp: +258 86 011 1163
+</p>
+</section>
+
+<footer>
+HEMANJA EXPRESS © PREMIUM DIGITAL EXPERIENCE
+</footer>
+
+<a class="floating-btn" href="https://wa.me/258860111163?text=Olá! Quero fazer um pedido 🍕">
+💬
+</a>
+
+</body>
+</html>
